@@ -47,6 +47,8 @@ and it will handle generating the keys and uploading them to the metadata
 server. For this demo, it is assumed you have opted to use
 `gcloud compute ssh` and your private key is located at `$HOME/.ssh/google_compute_engine`.
 
+# gcloud compute ssh myinstance1 --project=assignment-318105
+
 ## Software
 
 1. Install Dependencies.  On Debian-7, you may run the following to install them.
@@ -105,6 +107,9 @@ instances
 
 ```
 ansible-playbook -i ansible_hosts site.yml
+ansible-playbook -vvv -i ansible_hosts site.yml -e 'ansible_python_interpreter=/usr/bin/python3' --private-key=~/.ssh/google_compute_engine
+
+
 ```
 
 1. The output from this command will display the public IP address associated
